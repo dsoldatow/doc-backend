@@ -1,5 +1,5 @@
 import aiohttp_cors
-from api import health, auth, profile, subscribe, news
+from api import health, auth, profile, subscribe, news, chat
 
 
 def setup_routes(app):
@@ -22,3 +22,7 @@ def setup_routes(app):
     cors.add(app.router.add_put('/news', news.update_news))
     cors.add(app.router.add_get('/news/{id_user}', news.get_news_by_handler))
     cors.add(app.router.add_get('/news_for_me/{id_user}', news.get_news_handler))
+    cors.add(app.router.add_get('/chat/{id_chat}', chat.get_messages_handler))
+    cors.add(app.router.add_post('/chat', chat.create_message_handler))
+    cors.add(app.router.add_get('/chats/{id_user}', chat.get_chats_handler))
+
