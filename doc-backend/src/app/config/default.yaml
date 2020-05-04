@@ -1,0 +1,9 @@
+postgres:
+  host: '95.217.183.87'
+  port: 5432
+  database: 'doctor_app'
+  user: 'doctor_app'
+  password: 'doctor_app'
+  minsize: 1
+  maxsize: 32
+  oracle_data: False
