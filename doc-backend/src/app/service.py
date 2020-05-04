@@ -1,6 +1,6 @@
 from aiohttp import web
-from app.routes import setup_routes
-from app.external.postgres import PostgresEngine
+from routes import setup_routes
+from external.postgres import PostgresEngine
 import yaml
 import pathlib
 

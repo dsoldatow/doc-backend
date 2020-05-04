@@ -1,7 +1,7 @@
 from aiohttp import web
 import asyncpg
 import json
-from app.db_utils import check_is_doctor
+from db_utils import check_is_doctor
 
 async def auth_db(db, login, password):
     """"""

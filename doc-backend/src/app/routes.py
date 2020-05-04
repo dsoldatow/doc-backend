@@ -1,5 +1,5 @@
 import aiohttp_cors
-from app.api import health, auth, profile, subscribe, news
+from api import health, auth, profile, subscribe, news
 
 
 def setup_routes(app):
