@@ -41,7 +41,7 @@ async def get_chats_db(db, id_user):
         resp = await db.exec_("""    
                              with pum as (SELECT chats.id_chat, chats.from_user, chats.to_user, name, surname, last_name, max(msg.timestamp)
                                  FROM chats 
-                                left join doctor_profiles dp on dp.id_user = chats.from_user
+                                left join user_profiles dp on dp.id_user = chats.from_user
                                 left join messages msg on msg.id_chat = chats.id_chat
                                 where chats.to_user = $1
                                 group by chats.id_chat, name, surname, last_name)
@@ -52,7 +52,7 @@ async def get_chats_db(db, id_user):
         resp = await db.exec_("""    
                                     with pum as (SELECT chats.id_chat, chats.from_user, chats.to_user, name, surname, last_name, max(msg.timestamp)
                                  FROM chats 
-                                left join user_profiles dp on dp.id_user = chats.to_user
+                                left join doctor_profiles dp on dp.id_user = chats.to_user
                                 left join messages msg on msg.id_chat = chats.id_chat
                                 where chats.from_user = $1
                                 group by chats.id_chat, name, surname, last_name)
