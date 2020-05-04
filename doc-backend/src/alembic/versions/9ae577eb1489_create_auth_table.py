@@ -23,7 +23,8 @@ def upgrade():
             id_user serial PRIMARY KEY,
             login VARCHAR (100) UNIQUE NOT NULL,
             password VARCHAR(100) NOT NULL,
-            is_doctor bool not null 
+            is_doctor bool not null,
+            "timestamp" timestamp not null default now()
             );
     """)
 

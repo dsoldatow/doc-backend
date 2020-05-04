@@ -6,3 +6,4 @@ alembic==1.4.2
 requests==2.23.0
 aiopg==1.0.0
 pyyaml==5.3.1
+asyncpg

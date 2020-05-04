@@ -20,14 +20,15 @@ def upgrade():
     op.execute(
         """
         CREATE TABLE doctor_profiles(
-            id_doctor integer unique,
+            id_user integer unique,
             name text not null default '',
             surname text not null default '',
             last_name text not null default '',
             company text not null default '',
             city text not null default '',
             spec text not null default '',
-            description text not null default ''
+            description text not null default '',
+            img text not null default ''
             );
     """)
 
